@@ -1,5 +1,6 @@
 import tensorflow as tf
 from scipy import misc
+from __future__ import print_function
 import cv2
 import numpy as np
 import facenet
@@ -8,6 +9,7 @@ import os
 import time
 import pickle
 import sys
+import detect_face
 
 
 with tf.Graph().as_default():
@@ -37,3 +39,4 @@ with tf.Graph().as_default():
         prevTime = 0
     
         frame = cv2.imread(img_path,0)
+        cv2.imshow('Image', frame)
