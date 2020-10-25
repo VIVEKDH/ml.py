@@ -3,6 +3,12 @@ from __future__ import division
 from __future__ import print_function
 import tensorflow as tf
 from scipy import misc
+import cv2
+import numpy as np
+import facenet
+import detect_face
+import os 
+import time
 import sys
 import pickle
 countt=0
