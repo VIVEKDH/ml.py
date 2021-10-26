@@ -59,7 +59,7 @@ with tf.Graph().as_default():
             raise Exception("Could not open video device")
         c = 0
         if video_capture is None:
-            print("wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww")
+            print("Video is not Captured properly")
 
         print('Start Recognition')
         prevTime = 0
@@ -114,7 +114,7 @@ with tf.Graph().as_default():
                                     scaled.append(misc.imresize(cropped[i], (image_size, image_size), interp='bilinear'))
                                     continue
                                 except:
-                                    print("ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
+                                    print("Face not captured properly so please try again with some distance")
                                     continue
                             try:
                                 cropped.append(frame[bb[i][1]:bb[i][3], bb[i][0]:bb[i][2], :])
@@ -134,7 +134,7 @@ with tf.Graph().as_default():
                                 print(best_class_indices,' with accuracy ',best_class_probabilities)
                             
                             except:
-                                print("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX")
+                                print("some error occured while processing, please try again")
                                 continue
                             # print(best_class_probabilities)
                             countt=countt+1
