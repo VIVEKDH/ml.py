@@ -11,6 +11,7 @@ import os
 import time
 import sys
 import pickle
+import datetime
 countt=0
 student=[]
 cascPath = sys.argv[0]
@@ -22,6 +23,8 @@ npy='./npy'
 train_img="./train_img"
 
 with tf.Graph().as_default():
+    
+    start_time = datetime.now()
     gpu_options = tf.GPUOptions(per_process_gpu_memory_fraction=0.6)
     sess = tf.Session(config=tf.ConfigProto(gpu_options=gpu_options, log_device_placement=False))
     with sess.as_default():
@@ -170,6 +173,8 @@ with tf.Graph().as_default():
 
             if cv2.waitKey(1) & 0xFF == ord('q'):
                 break
+        end_time = datetime.now()
+        print('total_time: ', end_time-start_time)
         video_capture.release()
         cv2.destroyAllWindows()
 
